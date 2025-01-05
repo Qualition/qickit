@@ -235,7 +235,6 @@ def mcsu2_real_diagonal_decomposition(
     circuit.add(s_gate, [target])
 
     mcx_2 = mcx_vchain_decomposition(num_control_qubits=k_2, output_framework=output_framework)
-    mcx_2.horizontal_reverse()
     circuit.add(mcx_2, controls[k_1:] + [target] + controls[k_1 - k_2 + 2 : k_1])
     circuit.add(s_gate_adjoint, [target])
 
